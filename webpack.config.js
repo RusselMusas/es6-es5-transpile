@@ -4,10 +4,13 @@ var path = require('path');
 module.exports = {
     mode: "development",
     devtool: 'source-map',
-    entry: './js/main.js',
+    entry: {
+        app: './js/main.js',
+        ratefinder: './js/ratefinder.js'
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'main.bundle.js'
+        filename: '[name].bundle.js'
     },
     target: ['web', 'es5'],
     module: {
@@ -19,6 +22,7 @@ module.exports = {
             }
         ]
     },
+    plugins: [],
     stats: {
         colors: true
     }
