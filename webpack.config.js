@@ -6,7 +6,7 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         app: './js/main.js',
-        ratefinder: './js/ratefinder.js'
+        ratefinder: ['core-js/es/promise','./js/ratefinder.js']
     },
     output: {
         path: path.resolve(__dirname, 'build'),
