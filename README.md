@@ -3,10 +3,11 @@
 Start the tutorial [here](http://ccoenraets.github.io/es6-tutorial).
 
 Add support for Promise using polyfills
+=======================================
 
 Option 1: Use es6-promise
 
-Step 1: npm install -save es6-promise 
+Step 1: npm install --save es6-promise 
 Step2: and then import 'es6-promise/auto' at the top of the file that requires it
 Step3: execute npm run webpack and launch the app, enjoy!
 
@@ -18,3 +19,20 @@ sample:
 entry: {
     ratefinder: ['core-js/es/promise','./js/ratefinder.js']
 },
+
+Importing Jquery using Webpack
+==============================
+
+Option 1: Import Jquery in the html page in the <script> tag
+
+Option 2: Import Jquery in the Js modules with import statement
+
+Option 3: Add the Jquery globally using webpack.ProvidePlugin
+    
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        })
+    ],
+
