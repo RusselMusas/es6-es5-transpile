@@ -29,3 +29,7 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     //document.getElementById("amortization").innerHTML = html;
     $( "#amortization" ).html(html);
 });
+
+window.getValue = () => {
+    console.log("This function is called!");
+}

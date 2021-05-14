@@ -11042,6 +11042,10 @@ document.getElementById('calcBtn').addEventListener('click', function () {
 
   $("#amortization").html(html);
 });
+
+window.getValue = function () {
+  console.log("This function is called!");
+};
 }();
 /******/ })()
 ;
