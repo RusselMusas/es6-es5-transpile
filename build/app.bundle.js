@@ -11043,11 +11043,20 @@ document.getElementById('calcBtn').addEventListener('click', function () {
   }); //document.getElementById("amortization").innerHTML = html;
 
   $("#amortization").html(html);
-});
+}); // window.getValue = () => {
+//     console.log("This function is called!");
+// }
+// document.getValue = () => {
+//     console.log("This function is called!");
+// }
 
-document.getValue = function () {
+var getValue = function getValue() {
   console.log("This function is called!");
 };
+
+$('#labelPrincipal').on('click', function () {
+  getValue();
+});
 }();
 /******/ })()
 ;

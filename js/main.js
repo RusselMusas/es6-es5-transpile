@@ -32,6 +32,18 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     $( "#amortization" ).html(html);
 });
 
-document.getValue = () => {
+// window.getValue = () => {
+//     console.log("This function is called!");
+// }
+
+// document.getValue = () => {
+//     console.log("This function is called!");
+// }
+
+let getValue = () => {
     console.log("This function is called!");
 }
+
+$('#labelPrincipal').on('click',function() {
+    getValue();
+});
