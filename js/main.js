@@ -1,8 +1,7 @@
-"use strict";
-
+import '../css/styles.css';
 import { Mortgage } from './mortgage2';
 
-document.getElementById('calcBtn').addEventListener('click', () => {
+document.calcAmortissement = () => {
     let principal = document.getElementById("principal").value;
     let years = document.getElementById("years").value;
     let rate = document.getElementById("rate").value;
@@ -30,7 +29,7 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     `);
     //document.getElementById("amortization").innerHTML = html;
     $( "#amortization" ).html(html);
-});
+}
 
 // window.getValue = () => {
 //     console.log("This function is called!");
@@ -60,6 +59,6 @@ let getValue = async () => {
     console.log("After calcSum.");
 }
 
-$('#labelPrincipal').on('click',function() {
+document.fetchDataWithPromise = () => {
     getValue();
-});
+}
