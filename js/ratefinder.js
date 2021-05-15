@@ -1,3 +1,5 @@
+"use strict";
+
 import * as service from './rate-service-mock';
 import 'es6-promise/auto';
     

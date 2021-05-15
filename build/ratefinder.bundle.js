@@ -12221,6 +12221,8 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
+
+
 _rate_service_mock__WEBPACK_IMPORTED_MODULE_0__.findAll().then(function (rates) {
   var html = '';
   rates.forEach(function (rate) {

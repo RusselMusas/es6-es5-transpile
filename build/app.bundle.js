@@ -11028,6 +11028,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mortgage2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mortgage2 */ "./js/mortgage2.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
+
+
 document.getElementById('calcBtn').addEventListener('click', function () {
   var principal = document.getElementById("principal").value;
   var years = document.getElementById("years").value;
@@ -11043,7 +11045,7 @@ document.getElementById('calcBtn').addEventListener('click', function () {
   $("#amortization").html(html);
 });
 
-window.getValue = function () {
+document.getValue = function () {
   console.log("This function is called!");
 };
 }();

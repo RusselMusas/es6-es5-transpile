@@ -1,3 +1,5 @@
+"use strict";
+
 import { Mortgage } from './mortgage2';
 
 document.getElementById('calcBtn').addEventListener('click', () => {
@@ -30,6 +32,6 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     $( "#amortization" ).html(html);
 });
 
-window.getValue = () => {
+document.getValue = () => {
     console.log("This function is called!");
 }
