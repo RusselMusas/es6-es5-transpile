@@ -40,8 +40,24 @@ document.getElementById('calcBtn').addEventListener('click', () => {
 //     console.log("This function is called!");
 // }
 
-let getValue = () => {
+let calcSum = () => {
+    console.log("calcSum is running, please wait...");
+    return new Promise(resolve => {
+        setTimeout(() => {
+            let a = 11;
+            let b = 12;
+            let sumR = parseFloat(a) + parseFloat(b);
+            console.log("calcSum completed, result: " + sumR + " is returned.");
+            resolve(sumR);
+        }, 5000);
+    });
+}
+
+let getValue = async () => {
     console.log("This function is called!");
+    const sumResponse = await calcSum();
+    console.log("sum received is: " + sumResponse)
+    console.log("After calcSum.");
 }
 
 $('#labelPrincipal').on('click',function() {

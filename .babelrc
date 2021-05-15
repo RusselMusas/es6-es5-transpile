@@ -9,6 +9,9 @@
               "targets": "> 0.25%, not dead"
             }
           ]
+        ],
+        "plugins": [
+          "transform-async-to-generator"
         ]
       }
     }

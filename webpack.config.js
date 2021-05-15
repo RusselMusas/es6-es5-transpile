@@ -5,7 +5,7 @@ module.exports = {
     mode: "development",
     devtool: 'source-map',
     entry: {
-        app: './js/main.js',
+        app: ['babel-polyfill', './js/main.js'],
         ratefinder: './js/ratefinder.js'
     },
     output: {
