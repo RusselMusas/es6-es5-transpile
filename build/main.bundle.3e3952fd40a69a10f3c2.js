@@ -22875,19 +22875,6 @@ return jQuery;
 } );
 
 
-/***/ }),
-
-/***/ "./css/styles.css":
-/*!************************!*\
-  !*** ./css/styles.css ***!
-  \************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
 /***/ })
 
 /******/ 	});
@@ -23014,8 +23001,7 @@ var __webpack_exports__ = {};
   !*** ./js/main.js ***!
   \********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _css_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/styles.css */ "./css/styles.css");
-/* harmony import */ var _mortgage2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mortgage2 */ "./js/mortgage2.js");
+/* harmony import */ var _mortgage2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mortgage2 */ "./js/mortgage2.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -23023,12 +23009,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
 document.calcAmortissement = function () {
   var principal = document.getElementById("principal").value;
   var years = document.getElementById("years").value;
   var rate = document.getElementById("rate").value;
-  var mortgage = new _mortgage2__WEBPACK_IMPORTED_MODULE_1__.Mortgage(principal, years, rate);
+  var mortgage = new _mortgage2__WEBPACK_IMPORTED_MODULE_0__.Mortgage(principal, years, rate);
   document.getElementById("monthlyPayment").innerHTML = mortgage.monthlyPayment.toFixed(2);
   document.getElementById("monthlyRate").innerHTML = (rate / 12).toFixed(2);
   var html = "";
@@ -23094,6 +23079,7 @@ document.fetchDataWithPromise = function () {
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
 "use strict";
+var __webpack_exports__ = {};
 /*!**************************!*\
   !*** ./js/ratefinder.js ***!
   \**************************/
@@ -23116,6 +23102,16 @@ _rate_service_mock__WEBPACK_IMPORTED_MODULE_0__.findAll().then(function (rates) 
   return console.log(e);
 });
 }();
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+!function() {
+"use strict";
+/*!************************!*\
+  !*** ./css/styles.css ***!
+  \************************/
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+}();
 /******/ })()
 ;
-//# sourceMappingURL=main.bundle.js.map
+//# sourceMappingURL=main.bundle.3e3952fd40a69a10f3c2.js.map

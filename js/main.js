@@ -1,4 +1,3 @@
-import '../css/styles.css';
 import { Mortgage } from './mortgage2';
 
 document.calcAmortissement = () => {

@@ -7,11 +7,11 @@ module.exports = {
     mode: "development",
     devtool: 'source-map',
     entry: {
-        main: ['babel-polyfill', './js/main.js', './js/ratefinder.js']
+        main: ['babel-polyfill', './js/main.js', './js/ratefinder.js', './css/styles.css']
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.[chunkhash].js'
     },
     plugins: [
         // Inject Jquery
@@ -21,7 +21,7 @@ module.exports = {
         }),
         // Generate an external css file
         new MiniCssExtractPlugin({
-          filename: "[name].bundle.css",
+          filename: "[name].bundle.[chunkhash].css",
         }),
         // Create HTML file that includes reference to bundled JS.
         new HtmlWebpackPlugin({
