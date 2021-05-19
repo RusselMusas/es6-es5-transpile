@@ -2,16 +2,18 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var HtmlWebpackSkipAssetsPlugin = require("html-webpack-skip-assets-plugin").HtmlWebpackSkipAssetsPlugin;
 
 module.exports = {
     mode: "development",
     devtool: 'source-map',
     entry: {
-        main: ['babel-polyfill', './js/main.js', './js/ratefinder.js', './css/styles.css']
+        main: ['babel-polyfill', './js/main.js', './css/styles.css'],
+        ratefinder: ['babel-polyfill', './js/ratefinder.js']
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].bundle.[chunkhash].js'
+        filename: './js/[name].bundle.[chunkhash].js'
     },
     plugins: [
         // Inject Jquery
@@ -21,20 +23,22 @@ module.exports = {
         }),
         // Generate an external css file
         new MiniCssExtractPlugin({
-          filename: "[name].bundle.[chunkhash].css",
+          filename: "./css/[name].bundle.[chunkhash].css",
         }),
         // Create HTML file that includes reference to bundled JS.
         new HtmlWebpackPlugin({
           filename: 'index.html',
           template: 'index.html',
-          inject: 'body'
+          inject: 'body',
+          excludeAssets: ["./js/ratefinder.**.**.js"]
         }),
         new HtmlWebpackPlugin({
           filename: 'ratefinder.html',
           template: 'ratefinder.html',
           inject: 'body',
-          script: ''
-        })
+          excludeAssets: ["./js/main.**.**.js", "./css/main.**.**.css"]
+        }),
+        new HtmlWebpackSkipAssetsPlugin()
     ],
     target: ['web', 'es5'],
     module: {

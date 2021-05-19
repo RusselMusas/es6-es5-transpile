@@ -84,3 +84,53 @@ entry: {
     app: ['babel-polyfill', './js/main.js']
 }
 
+Webpack generate html
+=====================
+install: npm install --save-dev 
+
+Then include in webpack config file:
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+
+and use it in plugins section:
+example:
+new HtmlWebpackPlugin({
+          filename: 'index.html',
+          template: 'index.html',
+          inject: 'body',
+          excludeAssets: ["ratefinder.**.**.js"]
+        }),
+
+Webpack extract .css in files
+=============================
+install: npm install --save-dev mini-css-extract-plugin
+
+In webpack: 
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+Then use it in plugin section:
+new MiniCssExtractPlugin({
+          filename: "[name].bundle.[chunkhash].css",
+        }),
+
+Webpack inject assets .js and .css
+==================================
+It is done automatically when generating html, css and js with webpack plugins.
+You also have options to exclude some assets (css, js) using some plugins (ex: html-webpack-skip-assets-plugin);
+
+Webpack exclude assets
+======================
+install:
+npm install --save-dev html-webpack-skip-assets-plugin
+
+include in webpack:
+var HtmlWebpackSkipAssetsPlugin = require("html-webpack-skip-assets-plugin").HtmlWebpackSkipAssetsPlugin;
+then, use it in plugins section:
+example:
+new HtmlWebpackPlugin({
+          filename: 'ratefinder.html',
+          template: 'ratefinder.html',
+          inject: 'body',
+          excludeAssets: ["main.**.**.js", "main.**.**.css"]
+        }),
+        new HtmlWebpackSkipAssetsPlugin()
+
+Next: Loadash syntax
