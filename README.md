@@ -133,4 +133,22 @@ new HtmlWebpackPlugin({
         }),
         new HtmlWebpackSkipAssetsPlugin()
 
+Webpack setup css minimizer plugin
+==================================
+Install: $ npm install css-minimizer-webpack-plugin --save-dev
+
+Include in webpack.config:
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
+optimization: {
+    minimize: true,
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`,
+      new CssMinimizerPlugin(),
+    ],
+},
+
+
 Next: Loadash syntax
