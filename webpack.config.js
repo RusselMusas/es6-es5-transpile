@@ -6,7 +6,7 @@ var HtmlWebpackSkipAssetsPlugin = require("html-webpack-skip-assets-plugin").Htm
 var CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     devtool: 'source-map',
     entry: {
         main: ['babel-polyfill', './js/main.js', './css/styles.css'],

@@ -57,7 +57,7 @@ document.getValue = () => {
 Option 3:
 use eventListener with plain javascript or with jquery if added
 
-Ewamples:
+Examples:
 With plain javascript:
 document.getElementById('calcBtn').addEventListener('click', () => {
     //Stuff here
@@ -67,6 +67,28 @@ With jquery:
 $('#labelPrincipal').on('click',function() {
     getValue();
 });
+
+Option 4:
+Attach JS Functions to one object declared in window scope,
+then, the functions are called through the object.
+
+Example: Put these lines in main.js
+let test = () => {
+    console.log("This function is attached to myLibrary!");
+}
+
+let sayHello = (name) => {
+    console.log("Hello " + name);
+}
+
+window.myLibrary = {
+    test: test,
+    sayHello: sayHello
+}
+
+Then in the html page, add this to call functions:
+onclick="myLibrary.test()" and
+onclick="myLibrary.sayHello('Russel')"
 
 Webpack add support for Promise, Async, Await
 =============================================

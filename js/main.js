@@ -61,3 +61,19 @@ let getValue = async () => {
 document.fetchDataWithPromise = () => {
     getValue();
 }
+
+let test = () => {
+    console.log("This function is attached to myLibrary!");
+}
+
+let sayHello = (name) => {
+    console.log("Hello " + name);
+}
+
+window.myLibrary = {
+    test: test,
+    sayHello: sayHello
+}
+
+//run test() on load
+myLibrary.test();
